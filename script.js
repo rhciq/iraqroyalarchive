@@ -1,4 +1,11 @@
-// دالة رئيسية لجلب البيانات وتوزيعها حسب القسم المختار
+// 1. إعداد الاتصال بقاعدة بيانات Supabase
+const SUPABASE_URL = 'https://aowiqjnrflackufrpdui.supabase.co'; 
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFvd2lxam5yZmxhY2t1ZnJwZHVpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODQyOTIwMzQsImV4cCI6MjA5OTg2ODAzNH0.H_y_QgSbaz3YRY_dO_0HNlLrAoLSnGvb-iMjgvqT94g';
+
+// إنشاء عميل Supabase للاتصال
+const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+// 2. دالة رئيسية لجلب البيانات وتوزيعها حسب القسم المختار
 async function loadSectionContent(categoryName) {
     const container = document.getElementById('articles-container'); 
     
@@ -8,7 +15,7 @@ async function loadSectionContent(categoryName) {
     }
 
     // إظهار نص مؤقت أثناء تحميل البيانات
-    container.innerHTML = '<p style="color: #ffd700; text-align: center; font-size: 18px;">جاري تحميل المحتوى...</p>';
+    container.innerHTML = '<p style="color: #ffd700; text-align: center; font-size: 18px;">جاري تحميل المحتوى التاريخي...</p>';
 
     // جلب البيانات وتصفيتها بناءً على الـ category
     const { data: posts, error } = await supabase
@@ -53,35 +60,27 @@ async function loadSectionContent(categoryName) {
     });
 }
 
-// --- ربط جميع أزرار الأقسام الجديدة بالدالة البرمجية ---
-// تأكد من إضافة الـ id المطابق لكل زر في ملف الـ HTML الخاص بك
-
-// 1. زر الرئيسية / الأخبار
+// --- ربط جميع أزرار الأقسام بالدالة البرمجية ---
 if(document.getElementById('btn-news')) {
     document.getElementById('btn-news').addEventListener('click', (e) => { e.preventDefault(); loadSectionContent('news'); });
 }
 
-// 2. زر المقالات
 if(document.getElementById('btn-articles')) {
     document.getElementById('btn-articles').addEventListener('click', (e) => { e.preventDefault(); loadSectionContent('articles'); });
 }
 
-// 3. زر ملوك العراق
 if(document.getElementById('btn-kings')) {
     document.getElementById('btn-kings').addEventListener('click', (e) => { e.preventDefault(); loadSectionContent('kings'); });
 }
 
-// 4. زر الوثائقيات
 if(document.getElementById('btn-documentaries')) {
     document.getElementById('btn-documentaries').addEventListener('click', (e) => { e.preventDefault(); loadSectionContent('documentaries'); });
 }
 
-// 5. زر معرض الصور
 if(document.getElementById('btn-photos')) {
     document.getElementById('btn-photos').addEventListener('click', (e) => { e.preventDefault(); loadSectionContent('photos'); });
 }
 
-// 6. زر الأرشيف
 if(document.getElementById('btn-archive')) {
     document.getElementById('btn-archive').addEventListener('click', (e) => { e.preventDefault(); loadSectionContent('archive'); });
 }
