@@ -1,0 +1,16 @@
+backend:
+  name: test-repo
+
+media_folder: "images"
+public_folder: "/images"
+
+collections:
+  - name: "posts"
+    label: "المقالات"
+    folder: "posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "العنوان", name: "title", widget: "string"}
+      - {label: "الصورة", name: "image", widget: "image"}
+      - {label: "المقال", name: "body", widget: "markdown"}
