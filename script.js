@@ -27,7 +27,7 @@ return;
 posts.forEach(post => {
 const card = document.createElement('div');
 card.className = 'card';
-card.innerHTML = ⁠<img src="${post.image_url || 'images/news1.jpg'}" alt="${post.title}"> <h3>${post.title}</h3> <p>${post.content}</p>⁠;
+card.innerHTML = '<img src="' + (post.image_url || 'images/news1.jpg') + '" alt="' + post.title + '"><h3>' + post.title + '</h3><p>' + post.content + '</p>';
 container.appendChild(card);
 });
 }
