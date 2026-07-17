@@ -5,52 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>المملكة العراقية</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="top-news">
-        <marquee>
-            👑 أهلاً بكم في موقع المملكة العراقية | آخر الأخبار والمقالات والصور والوثائقيات التاريخية
-        </marquee>
+
+    <!-- القائمة العلوية والأزرار -->
+    <div class="header-container" style="background-color: #000; text-align: center; padding: 20px;">
+        <h1 style="color: #ffd700; margin-bottom: 15px;">👑 المملكة العراقية</h1>
+        <div class="nav-buttons">
+            <button id="btn-news" style="background: none; border: none; color: #fff; margin: 0 10px; font-size: 16px; cursor: pointer;">الرئيسية / الأخبار</button>
+            <button id="btn-articles" style="background: none; border: none; color: #fff; margin: 0 10px; font-size: 16px; cursor: pointer;">المقالات</button>
+            <button id="btn-kings" style="background: none; border: none; color: #fff; margin: 0 10px; font-size: 16px; cursor: pointer;">ملوك العراق</button>
+            <button id="btn-documentaries" style="background: none; border: none; color: #fff; margin: 0 10px; font-size: 16px; cursor: pointer;">الوثائقيات</button>
+            <button id="btn-photos" style="background: none; border: none; color: #fff; margin: 0 10px; font-size: 16px; cursor: pointer;">معرض الصور</button>
+            <button id="btn-archive" style="background: none; border: none; color: #fff; margin: 0 10px; font-size: 16px; cursor: pointer;">الأرشيف</button>
+        </div>
     </div>
 
-    <header>
-        <div class="logo">
-            👑 المملكة العراقية
+    <!-- مكان عرض المحتوى التاريخي -->
+    <div class="content-section" style="max-width: 800px; margin: 30px auto; padding: 0 20px;">
+        <h2 style="color: #c5a059; text-align: center; margin-bottom: 25px;">المحتوى التاريخي</h2>
+        <div id="articles-container">
+            <!-- هنا ستظهر المنشورات تلقائياً -->
         </div>
-        <nav>
-            <ul>
-                <!-- هنا أضفنا الـ IDs لكل زر لتتوافق مع ملف الـ script.js -->
-                <li><a href="#" id="btn-news">الرئيسية / الأخبار</a></li>
-                <li><a href="#" id="btn-articles">المقالات</a></li>
-                <li><a href="#" id="btn-kings">ملوك العراق</a></li>
-                <li><a href="#" id="btn-documentaries">الوثائقيات</a></li>
-                <li><a href="#" id="btn-photos">معرض الصور</a></li>
-                <li><a href="#" id="btn-archive">الأرشيف</a></li>
-                <li><a href="#">تواصل معنا</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <section class="hero">
-        <div class="overlay">
-            <h1>المملكة العراقية</h1>
-            <p>
-                منصة تهتم بتاريخ المملكة العراقية، وملوكها، ووثائقها، وصورها، ومقالاتها التاريخية.
-            </p>
-            <a href="#" class="btn">استكشف الموقع</a>
-        </div>
-    </section>
-
-    <section class="latest">
-        <h2>المحتوى التاريخي</h2>
-        <!-- هنا قمنا بتغيير الـ ID إلى articles-container ليطابق كود الـ JS تماماً -->
-        <div class="cards" id="articles-container">
-            <p style="text-align: center; color: #888; width: 100%;">جاري تحميل المحتوى التاريخي...</p>
-        </div>
-    </section>
+    </div>
 
     <script src="script.js"></script>
 </body>
