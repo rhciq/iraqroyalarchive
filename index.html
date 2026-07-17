@@ -1,56 +1,57 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>المملكة العراقية</title>
-<link rel="stylesheet" href="style.css">
-<link rel="preconnect" href="[https://fonts.googleapis.com](https://fonts.googleapis.com)">
-<link rel="preconnect" href="[https://fonts.gstatic.com](https://fonts.gstatic.com)" crossorigin>
-<link href="[https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700;900&display=swap](https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700;900&display=swap)" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المملكة العراقية</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
-<div class="top-news">
-<marquee>
-👑 أهلاً بكم في موقع المملكة العراقية | آخر الأخبار والمقالات والصور والوثائقيات التاريخية
-</marquee>
-</div>
-<header>
-<div class="logo">
-👑 المملكة العراقية
-</div>
-<nav>
-<ul>
-<li><a href="#">الرئيسية</a></li>
-<li><a href="#">الأخبار</a></li>
-<li><a href="#">المقالات</a></li>
-<li><a href="#">ملوك العراق</a></li>
-<li><a href="#">الوثائقيات</a></li>
-<li><a href="#">معرض الصور</a></li>
-<li><a href="#">الأرشيف</a></li>
-<li><a href="#">تواصل معنا</a></li>
-</ul>
-</nav>
-</header>
-<section class="hero">
-<div class="overlay">
-<h1>المملكة العراقية</h1>
-<p>
-منصة تهتم بتاريخ المملكة العراقية، وملوكها، ووثائقها، وصورها، ومقالاتها التاريخية.
-</p>
-<a href="#" class="btn">
-استكشف الموقع
-</a>
-</div>
-</section>
-<section class="latest">
-<h2>
-آخر الأخبار
-</h2>
-<div class="cards" id="news-container">
-<p style="text-align: center; color: #888; width: 100%;">جاري تحميل آخر الأخبار التاريخية...</p>
-</div>
-</section>
-<script src="script.js"></script>
+    <div class="top-news">
+        <marquee>
+            👑 أهلاً بكم في موقع المملكة العراقية | آخر الأخبار والمقالات والصور والوثائقيات التاريخية
+        </marquee>
+    </div>
+
+    <header>
+        <div class="logo">
+            👑 المملكة العراقية
+        </div>
+        <nav>
+            <ul>
+                <!-- هنا أضفنا الـ IDs لكل زر لتتوافق مع ملف الـ script.js -->
+                <li><a href="#" id="btn-news">الرئيسية / الأخبار</a></li>
+                <li><a href="#" id="btn-articles">المقالات</a></li>
+                <li><a href="#" id="btn-kings">ملوك العراق</a></li>
+                <li><a href="#" id="btn-documentaries">الوثائقيات</a></li>
+                <li><a href="#" id="btn-photos">معرض الصور</a></li>
+                <li><a href="#" id="btn-archive">الأرشيف</a></li>
+                <li><a href="#">تواصل معنا</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="overlay">
+            <h1>المملكة العراقية</h1>
+            <p>
+                منصة تهتم بتاريخ المملكة العراقية، وملوكها، ووثائقها، وصورها، ومقالاتها التاريخية.
+            </p>
+            <a href="#" class="btn">استكشف الموقع</a>
+        </div>
+    </section>
+
+    <section class="latest">
+        <h2>المحتوى التاريخي</h2>
+        <!-- هنا قمنا بتغيير الـ ID إلى articles-container ليطابق كود الـ JS تماماً -->
+        <div class="cards" id="articles-container">
+            <p style="text-align: center; color: #888; width: 100%;">جاري تحميل المحتوى التاريخي...</p>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
 </body>
 </html>
