@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>المملكة العراقية</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Tahoma;
+}
+
+body{
+background:#0d0d0d;
+color:white;
+}
+
+header{
+background:#111;
+padding:20px;
+text-align:center;
+border-bottom:3px solid gold;
+}
+
+header h1{
+color:gold;
+font-size:40px;
+}
+
+nav{
+margin-top:15px;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin:15px;
+font-size:18px;
+transition:.3s;
+}
+
+nav a:hover{
+color:gold;
+}
+
+.news{
+background:gold;
+color:black;
+padding:10px;
+font-weight:bold;
+overflow:hidden;
+white-space:nowrap;
+}
+
+.news span{
+display:inline-block;
+padding-left:100%;
+animation:move 20s linear infinite;
+}
+
+@keyframes move{
+0%{transform:translateX(0);}
+100%{transform:translateX(-100%);}
+}
+
+.hero{
+height:500px;
+background:url("https://images.unsplash.com/photo-1511818966892-d7d671e672a2?w=1600") center/cover;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+.hero h2{
+background:rgba(0,0,0,.7);
+padding:20px;
+font-size:45px;
+color:gold;
+}
+
+section{
+padding:50px;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.card{
+background:#1b1b1b;
+border:1px solid gold;
+padding:20px;
+border-radius:10px;
+}
+
+.card h3{
+color:gold;
+margin-bottom:10px;
+}
+
+footer{
+background:#111;
+text-align:center;
+padding:20px;
+border-top:2px solid gold;
+margin-top:40px;
+}
+</style>
+
+</head>
+<body>
+
+<header>
+
+<h1>👑 المملكة العراقية</h1>
+
+<nav>
+<a href="#">الرئيسية</a>
+<a href="#">الأخبار</a>
+<a href="#">الملوك</a>
+<a href="#">التاريخ</a>
+<a href="#">الصور</a>
+<a href="#">المقالات</a>
+</nav>
+
+</header>
+
+<div class="news">
+<span>
+📰 آخر الأخبار • إضافة مقالات جديدة • وثائق تاريخية • صور نادرة للعهد الملكي •
+</span>
+</div>
+
+<div class="hero">
+<h2>بوابة المملكة العراقية</h2>
+</div>
+
+<section>
+
+<h2 style="color:gold;text-align:center;margin-bottom:30px;">
+آخر المقالات
+</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>الملك فيصل الأول</h3>
+<p>
+مؤسس الدولة العراقية الحديثة وأول ملوك العراق.
+</p>
+</div>
+
+<div class="card">
+<h3>الملك غازي</h3>
+<p>
+تولى الحكم بعد الملك فيصل الأول واستمر حتى عام 1939.
+</p>
+</div>
+
+<div class="card">
+<h3>الملك فيصل الثاني</h3>
+<p>
+آخر ملوك العراق قبل انتهاء النظام الملكي عام 1958.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+جميع الحقوق محفوظة © المملكة العراقية
+
+</footer>
+
+</body>
+</html>
