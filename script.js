@@ -5,7 +5,9 @@ async function loadSectionContent(categoryName) {
 
     container.innerHTML = '<p style="color: #ffd700; text-align: center; font-size: 18px;">جاري جلب التاريخ العراقي العريق...</p>';
 
-    const apiUrl = `${SUPABASE_URL}/rest/v1/posts?category=eq.${categoryName}&select=*`;
+// تأكد أن هذه الأسماء (title, content, image_url, category) تطابق تماماً أسماء الأعمدة في جدولك
+const apiUrl = `${SUPABASE_URL}/rest/v1/posts?category=eq.${categoryName}&select=title,content,image_url`;
+
 
     try {
         const response = await fetch(apiUrl, {
