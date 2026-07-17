@@ -1,42 +1,24 @@
+/* تنسيق عام للجسم */
 body {
-    background-color: #0a0a0a;
-    color: #c5a059; /* لون ذهبي ملكي */
-    font-family: 'Arial', sans-serif;
-    text-align: center;
-    margin: 0;
-    padding: 20px;
+    background-color: #0a0a0a; /* خلفية داكنة جداً */
+    color: #f4f4f4; /* لون النص مريح */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
 }
 
-.logo {
-    width: 150px;
-    margin-bottom: 10px;
+/* تنسيق إطار المحتوى التاريخي */
+.content-section {
+    background-color: #1a1a1a; /* لون خلفية مختلف قليلاً */
+    border: 1px solid #c5a059; /* إطار ذهبي نحيف */
+    border-radius: 15px; /* حواف دائرية ناعمة */
+    padding: 30px !important;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5); /* ظلال خفيفة لإعطاء عمق */
 }
 
-header h1 {
-    font-size: 2.5rem;
-    text-shadow: 2px 2px 4px #000;
+/* تنسيق خاص للصور داخل المقالات */
+.content-section img {
+    max-width: 100%;
+    border: 3px solid #c5a059; /* إطار ذهبي للصور */
+    border-radius: 8px;
+    margin: 15px 0;
 }
-
-nav button {
-    background: transparent;
-    border: 1px solid #c5a059;
-    color: #c5a059;
-    padding: 10px 20px;
-    margin: 5px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-nav button:hover {
-    background: #c5a059;
-    color: #000;
-}
-
-footer {
-    margin-top: 50px;
-    padding: 20px;
-    border-top: 1px solid #333;
-    font-size: 0.9rem;
-}
-
-a { color: #fff; text-decoration: none; }
