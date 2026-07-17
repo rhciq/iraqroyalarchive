@@ -7,18 +7,6 @@
     <link rel="stylesheet" href="style.css">
     <style>
         .royal-logo { width: 120px; height: auto; margin-bottom: 10px; display: block; margin-left: auto; margin-right: auto; }
-        
-        /* تنسيق الصور داخل المحتوى */
-        .content-image {
-            max-width: 100%;
-            border-radius: 10px;
-            border: 2px solid #c5a059;
-            margin: 15px 0;
-            display: block;
-        }
-        
-        /* هذا الكود يخفي الصورة تلقائياً إذا فشل تحميلها */
-        .content-image[src=""], .content-image:not([src]) { display: none; }
     </style>
 </head>
 <body>
@@ -37,14 +25,11 @@
         </div>
     </div>
 
+    <!-- هذا الجزء الآن فارغ تماماً ليتم ملؤه تلقائياً بواسطة script.js -->
     <div class="content-section" style="max-width: 800px; margin: 30px auto; padding: 0 20px;">
         <h2 style="color: #c5a059; text-align: center; margin-bottom: 25px;">المحتوى التاريخي</h2>
         <div id="articles-container">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Rihab_Palace_Baghdad.jpg/800px-Rihab_Palace_Baghdad.jpg" 
-                 alt="قصر الرحاب" 
-                 class="content-image"
-                 onerror="this.style.display='none'">
-            <p style="color: #fff;">هنا يمكنك كتابة النص الخاص بك عن قصر الرحاب...</p>
+            <!-- هنا ستظهر المنشورات من Supabase تلقائياً -->
         </div>
     </div>
 
