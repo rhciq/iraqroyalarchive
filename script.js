@@ -1,5 +1,5 @@
 const SUPABASE_URL = "https://aowiqjnrflackufrpdui.supabase.co";
-const SUPABASE_KEY = "PUT_YOUR_PUBLISHABLE_KEY_HERE";
+const SUPABASE_KEY = "sb_publishable_IxX3UaHfipy8446_T9B6nQ_X80pX7o_";
 
 const container = document.getElementById("articles-container");
 
@@ -48,9 +48,7 @@ async function loadPosts(category) {
 
             card.innerHTML = `
                 <h2>${post.title}</h2>
-
-                ${post.image_url ? `<img src="${post.image_url}" alt="">` : ""}
-
+                ${post.image_url ? `<img src="${post.image_url}" alt="${post.title}">` : ""}
                 <p>${post.content}</p>
             `;
 
