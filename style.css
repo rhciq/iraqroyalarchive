@@ -1,112 +1,3 @@
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
-body{
-background:#0d0d0d;
-color:#ffffff;
-font-family:Tahoma,sans-serif;
-direction:rtl;
-}
-
-header{
-background:#111;
-padding:20px;
-text-align:center;
-border-bottom:3px solid #c5a059;
-}
-
-.logo{
-width:110px;
-display:block;
-margin:auto;
-margin-bottom:15px;
-}
-
-h1{
-color:#d4af37;
-margin-bottom:20px;
-font-size:32px;
-}
-
-nav{
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-gap:10px;
-}
-
-nav button{
-background:#1b1b1b;
-color:white;
-border:1px solid #c5a059;
-padding:12px 18px;
-cursor:pointer;
-border-radius:8px;
-font-size:16px;
-transition:.3s;
-}
-
-nav button:hover{
-background:#c5a059;
-color:black;
-}
-
-main{
-max-width:900px;
-margin:30px auto;
-padding:15px;
-}
-
-.post{
-background:#161616;
-border:1px solid #444;
-border-radius:10px;
-padding:20px;
-margin-bottom:25px;
-}
-
-.post h2{
-color:#d4af37;
-margin-bottom:15px;
-}
-
-.post img{
-width:100%;
-border-radius:8px;
-margin:15px 0;
-}
-
-.post p{
-line-height:2;
-font-size:17px;
-}
-
-.loading{
-text-align:center;
-font-size:22px;
-color:#d4af37;
-padding:40px;
-}
-
-@media(max-width:768px){
-
-.logo{
-width:80px;
-}
-
-h1{
-font-size:25px;
-}
-
-nav button{
-width:100%;
-}
-
-}
-
 /* ===== معرض الصور (إضافة جديدة) ===== */
 
 .gallery{
@@ -118,13 +9,37 @@ margin:15px 0;
 
 .gallery img{
 width:100%;
-height:180px;
-object-fit:cover;
+height:auto;
+max-height:700px;
+object-fit:contain;
 border-radius:8px;
 cursor:pointer;
 transition:.3s;
+background:#111;
 }
 
 .gallery img:hover{
-transform:scale(1.03);
+transform:scale(1.02);
+}
+
+/* ===== نافذة تكبير الصورة ===== */
+
+.image-modal{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.95);
+justify-content:center;
+align-items:center;
+z-index:9999;
+}
+
+.image-modal img{
+max-width:95%;
+max-height:95%;
+object-fit:contain;
+border-radius:10px;
 }
