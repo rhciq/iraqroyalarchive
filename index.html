@@ -15,9 +15,44 @@
             margin-left: auto;
             margin-right: auto;
         }
+
+        /* تنسيق شريط الأخبار */
+        .news-ticker {
+            display: flex;
+            background: #1a1a1a;
+            color: #ffd700;
+            padding: 10px;
+            overflow: hidden;
+            white-space: nowrap;
+            border-top: 2px solid #ffd700;
+            border-bottom: 2px solid #ffd700;
+            margin: 10px 0;
+            font-size: 14px;
+        }
+        .ticker-title {
+            padding: 0 15px;
+            font-weight: bold;
+            flex-shrink: 0;
+            border-left: 1px solid #ffd700;
+        }
+        .ticker-content {
+            display: inline-block;
+            padding-right: 100%;
+            animation: ticker 40s linear infinite;
+        }
+        @keyframes ticker {
+            0% { transform: translate(100%, 0); }
+            100% { transform: translate(-100%, 0); }
+        }
     </style>
 </head>
 <body>
+
+    <!-- شريط الأخبار -->
+    <div class="news-ticker">
+        <div class="ticker-title">أخبار عاجلة:</div>
+        <div id="ticker-content" class="ticker-content">جاري تحميل الأخبار...</div>
+    </div>
 
     <!-- القائمة العلوية والأزرار -->
     <div class="header-container" style="background-color: #000; text-align: center; padding: 20px;">
@@ -44,6 +79,22 @@
         </div>
     </div>
 
+    <script>
+        // كود جلب الأخبار
+        const rssUrl = "https://api.rss2json.com/v1/api.json?rss_url=https://www.aljazeera.net/feed/";
+        fetch(rssUrl)
+            .then(res => res.json())
+            .then(data => {
+                const container = document.getElementById('ticker-content');
+                if(data.items) {
+                    let titles = data.items.map(item => item.title).join(" | ");
+                    container.innerHTML = titles;
+                }
+            })
+            .catch(err => {
+                document.getElementById('ticker-content').innerHTML = "تعذر تحميل الأخبار حالياً.";
+            });
+    </script>
     <script src="script.js"></script>
 </body>
 </html>
