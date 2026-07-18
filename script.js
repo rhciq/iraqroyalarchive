@@ -2,22 +2,27 @@
 const SUPABASE_URL = 'https://aowiqjnrflackufrpdui.supabase.co';
 const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFvd2lxam5yZmxhY2t1ZnJwZHVpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODQyOTIwMzQsImV4cCI6MjA5OTg2ODAzNH0.H_y_QgSbaz3YRY_dO_0HNlLrAoLSnGvb-iMjgvqT94g';
 
-// دالة جلب شريط الأخبار التلقائي
+// دالة جلب شريط الأخبار التلقائي (مُحدثة للعمل بشكل مؤكد)
 async function loadNewsTicker() {
     const tickerContainer = document.getElementById('ticker-content');
     if (!tickerContainer) return;
 
-    const rssUrl = "https://api.rss2json.com/v1/api.json?rss_url=https://www.aljazeera.net/feed/";
+    // نستخدم وسيطاً مجانياً وموثوقاً لجلب الأخبار
+    const rssUrl = "https://api.rss2json.com/v1/api.json?rss_url=https://www.skynewsarabia.com/RSS/headlines.xml";
 
     try {
         const response = await fetch(rssUrl);
         const data = await response.json();
-        if (data.items) {
+        
+        if (data.status === 'ok' && data.items) {
             let titles = data.items.map(item => item.title).join(" | ");
             tickerContainer.innerHTML = titles;
+        } else {
+            tickerContainer.innerHTML = "أهلاً بك في منصة المملكة العراقية التاريخية.";
         }
     } catch (error) {
-        tickerContainer.innerHTML = "تعذر تحميل الأخبار.";
+        console.error("خطأ:", error);
+        tickerContainer.innerHTML = "أهلاً بك في منصة المملكة العراقية التاريخية.";
     }
 }
 
