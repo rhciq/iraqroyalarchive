@@ -52,13 +52,13 @@ async function loadPosts(category) {
             if (post.images && post.images.length > 0) {
                 imagesHTML = '<div class="gallery">';
                 post.images.forEach(img => {
-                    imagesHTML += `<img src="${img}" alt="${post.title}">`;
+                    imagesHTML += `<img src="${img}" alt="${post.title}" class="clickable-image">`;
                 });
                 imagesHTML += "</div>";
             }
             // الصورة الواحدة القديمة
             else if (post.image_url) {
-                imagesHTML = `<img src="${post.image_url}" alt="${post.title}">`;
+                imagesHTML = `<img src="${post.image_url}" alt="${post.title}" class="clickable-image">`;
             }
 
             card.innerHTML = `
@@ -70,6 +70,9 @@ async function loadPosts(category) {
             container.appendChild(card);
 
         });
+
+        // تشغيل تكبير الصور
+        setupImageViewer();
 
     } catch (err) {
 
@@ -106,3 +109,41 @@ window.onload = () => {
     loadPosts("news");
 
 };
+
+// ======================
+// تكبير الصور
+// ======================
+
+function setupImageViewer(){
+
+    let modal = document.getElementById("imageModal");
+
+    if(!modal){
+
+        modal = document.createElement("div");
+        modal.id = "imageModal";
+        modal.className = "image-modal";
+
+        modal.innerHTML = `
+            <img id="modalImage">
+        `;
+
+        document.body.appendChild(modal);
+
+        modal.onclick = () => {
+            modal.style.display = "none";
+        };
+    }
+
+    document.querySelectorAll(".clickable-image").forEach(img=>{
+
+        img.onclick = ()=>{
+
+            document.getElementById("modalImage").src = img.src;
+            modal.style.display = "flex";
+
+        };
+
+    });
+
+}
