@@ -46,9 +46,24 @@ async function loadPosts(category) {
             const card = document.createElement("div");
             card.className = "post";
 
+            let imagesHTML = "";
+
+            // الصور المتعددة
+            if (post.images && post.images.length > 0) {
+                imagesHTML = '<div class="gallery">';
+                post.images.forEach(img => {
+                    imagesHTML += `<img src="${img}" alt="${post.title}">`;
+                });
+                imagesHTML += "</div>";
+            }
+            // الصورة الواحدة القديمة
+            else if (post.image_url) {
+                imagesHTML = `<img src="${post.image_url}" alt="${post.title}">`;
+            }
+
             card.innerHTML = `
                 <h2>${post.title}</h2>
-                ${post.image_url ? `<img src="${post.image_url}" alt="${post.title}">` : ""}
+                ${imagesHTML}
                 <p>${post.content}</p>
             `;
 
