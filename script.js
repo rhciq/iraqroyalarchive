@@ -47,18 +47,61 @@ async function loadPosts(category) {
             card.className = "post";
 
             let imagesHTML = "";
+            let images = [];
 
-            // الصور المتعددة
-            if (post.images && post.images.length > 0) {
+            if (post.images) {
+
+                if (Array.isArray(post.images)) {
+                    images = post.images;
+                }
+
+                else if (
+                    typeof post.images === "object" &&
+                    post.images.images &&
+                    Array.isArray(post.images.images)
+                ) {
+                    images = post.images.images;
+                }
+
+                else if (typeof post.images === "string") {
+
+                    try {
+
+                        const parsed = JSON.parse(post.images);
+
+                        if (Array.isArray(parsed)) {
+                            images = parsed;
+                        } else if (parsed.images && Array.isArray(parsed.images)) {
+                            images = parsed.images;
+                        }
+
+                    } catch {
+
+                        images = post.images
+                            .split(",")
+                            .map(img => img.trim())
+                            .filter(Boolean);
+
+                    }
+
+                }
+
+            }
+
+            if (images.length > 0) {
+
                 imagesHTML = '<div class="gallery">';
-                post.images.forEach(img => {
+
+                images.forEach(img => {
                     imagesHTML += `<img src="${img}" alt="${post.title}" class="clickable-image">`;
                 });
+
                 imagesHTML += "</div>";
-            }
-            // الصورة الواحدة القديمة
-            else if (post.image_url) {
+
+            } else if (post.image_url) {
+
                 imagesHTML = `<img src="${post.image_url}" alt="${post.title}" class="clickable-image">`;
+
             }
 
             card.innerHTML = `
@@ -71,7 +114,6 @@ async function loadPosts(category) {
 
         });
 
-        // تشغيل تكبير الصور
         setupImageViewer();
 
     } catch (err) {
