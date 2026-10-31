@@ -1,59 +1,62 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>المملكة العراقية</title>
-
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المملكة العراقية | الأرشيف والتاريخ</title>
+    <!-- استدعاء خط عربي حديث ونظيف (Cairo) لزيادة فخامة الموقع -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<header>
+    <!-- خلفية جمالية تفاعلية -->
+    <div class="bg-glow-effect"></div>
 
-<img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Coat_of_arms_of_the_Kingdom_of_Iraq_%281921%E2%80%931958%29.svg">
+    <header class="site-header">
+        <div class="header-content">
+            <div class="logo-wrapper">
+                <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Coat_of_arms_of_the_Kingdom_of_Iraq_%281921%E2%80%931958%29.svg" alt="شعار المملكة العراقية">
+            </div>
+            <h1>المملكة العراقية</h1>
+            <p class="subtitle">أرشيف تاريخي توثيقي</p>
+        </div>
 
-<h1>المملكة العراقية</h1>
+        <nav class="nav-container">
+            <button id="btn-news" class="nav-btn active">الرئيسية</button>
+            <button id="btn-articles" class="nav-btn">المقالات</button>
+            <button id="btn-kings" class="nav-btn">ملوك العراق</button>
+            <button id="btn-documentaries" class="nav-btn">الوثائقيات</button>
+            <button id="btn-photos" class="nav-btn">معرض الصور</button>
+            <button id="btn-archive" class="nav-btn">الأرشيف</button>
+        </nav>
+    </header>
 
-<nav>
+    <main class="main-content">
+        <div id="articles-container" class="content-grid">
+            <div class="loading-card">
+                <div class="spinner"></div>
+                <span>جاري تحميل المحتوى التاريخي...</span>
+            </div>
+        </div>
+    </main>
 
-<button id="btn-news">الرئيسية</button>
+    <!-- حقوق النشر والتصميم -->
+    <footer class="site-footer">
+        <p>هذا الموقع لا ينتمي إلى جهة أو رسمية، وهو مبادرة تاريخية شخصية.</p>
+        <p class="signature">تصميم وبرمجة طه أحمد</p>
+    </footer>
 
-<button id="btn-articles">المقالات</button>
+    <!-- نافذة تكبير الصور -->
+    <div id="imageModal" class="image-modal">
+        <span class="close-modal">&times;</span>
+        <img id="modalImage" src="" alt="صورة مكبرة">
+    </div>
 
-<button id="btn-kings">ملوك العراق</button>
-
-<button id="btn-documentaries">الوثائقيات</button>
-
-<button id="btn-photos">معرض الصور</button>
-
-<button id="btn-archive">الأرشيف</button>
-
-</nav>
-
-</header>
-
-<main>
-
-<div id="articles-container">
-
-<div class="loading">
-
-جاري تحميل المحتوى...
-
-</div>
-
-</div>
-
-</main>
-
-<!-- نافذة تكبير الصور -->
-<div id="imageModal" class="image-modal">
-    <img id="modalImage" src="" alt="صورة">
-</div>
-
-<script src="script.js"></script>
-
+    <script src="script.js"></script>
 </body>
 </html>
